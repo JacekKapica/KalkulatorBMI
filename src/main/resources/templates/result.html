@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wynik BMI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .suggestion {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        .result-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">Strona główna</a>
+        </nav>
+        <div class="result-container">
+            <h1>Twoje BMI</h1>
+            <!-- Wyświetlanie wyniku BMI -->
+            <p th:text="'Twoje BMI wynosi: ' + ${bmi}"></p>
+            <p th:text="'Kategoria BMI: ' + ${bmiCategory}"></p>
+            <p class="suggestion" th:text="${bmiSuggestion}"></p>
+            <a href="/">Oblicz ponownie</a>
+        </div>
+    </div>
+</body>
+</html>
